@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Segoe UI', 'Open Sans', 'Roboto', sans-serif;
+		}
+
+		body {
+			/*background: #f1f1f1;*/
+			background: #a7cfdf;
+			background: -webkit-linear-gradient(bottom left, #a7cfdf 0%, #23538a 100%);
+			background: -moz-linear-gradient(bottom left, #a7cfdf 0%, #23538a 100%);
+			background: -o-linear-gradient(bottom left, #a7cfdf 0%, #23538a 100%);
+			background: linear-gradient(to top right, #dfa7a7 0%, #8a2323 100%);
+		}
+
+		.message {
+			background: white;
+			margin: 0 auto;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			text-align: left;
+			padding: 50px 50px 25px 50px;
+			border-radius: 10px;
+			box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
+			overflow: hidden;
+			animation: fadeIn 1s cubic-bezier(0.89,-0.13, 0, 1.19);
+			transform-origin: left;
+		}
+
+		@keyframes fadeIn {
+			from {
+				transform: scale(.5, .5) translateX(-50%) translateY(-50%);
+				opacity: 0;
+			}
+
+			to {
+				transform: scale(1, 1) translateX(-50%) translateY(-50%);
+				opacity: 1;
+			}
+		}
+
+		.message:before {
+			content: '';
+			width: 100%;
+			height: .5rem;
+			top: 0;
+			left: 0;
+			background: -moz-linear-gradient(left, #04B3BA 0%, #0ABEA2 100%);
+			background: -webkit-linear-gradient(left, #04B3BA 0%,#0ABEA2 100%);
+			background: linear-gradient(to right, hsl(0, 100%, 50%) 0%,hsl(17, 100%, 50%) 100%);
+			display: block;
+			position: absolute;
+		}
+
+		button {
+			background: linear-gradient(to right, hsl(0, 100%, 50%) 0%,hsl(14, 100%, 50%) 100%);
+			color: #fff;
+			font-weight: 500;
+			padding: .5rem 2rem;
+			border-radius: 5px;
+			border: none;
+			text-transform: uppercase;
+			margin-top: 1rem;
+			text-shadow: 0 1px 2px rgba(0,0,0,.2);
+			cursor: pointer;
+			transition: all .22s;
+		}
+
+			button:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+				filter: brightness(120%);
+			}
+
+		a {
+			text-decoration: none;
+			color: steelblue;
+			transition: all .22s;
+		}
+
+			a:hover {
+				color: indianred;
+			}
+
+		h1 {
+			font-weight: 400;
+		}
+
+		h2 {
+			font-weight: 100;
+		}
+
+		canvas, body, html {
+			height: 100%;
+			width: 100%;
+			overflow: hidden;
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="message">
+		<h1>Oops! There was an error creating the discrepancy.</h1>
+		<br />
+		<h2>The discrepancy may still show in the list of discrepancies. It will, however, disappear within a few minutes. Once it is gone, please try creating the discrepancy again.</h2>
+		<br />
+		<button onclick="GoBack();">Back to LineView</button>
+	</div>
+</body>
+<script>
+	var GoBack = () => {
+		let url = new URL(location.href);
+		let tail = url.searchParams.get("GoBack");
+		location.href = '/SKYW/acmaintlog/OpenAMLTab.aspx?Tail=' + tail;
+	}
+</script>
+</html>

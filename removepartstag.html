@@ -1,0 +1,240 @@
+
+
+<html>
+    <head>
+        <style>
+
+            * {
+                margin: 0;
+                outline: 0;
+                box-sizing: border-box;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size:13px;
+            }
+              
+            .container {
+                padding:20px;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .header {
+                width:90%;
+                text-align:center;
+            }
+
+            .logo {
+                position: absolute;
+                top:0;
+                left:0;
+            }
+
+            .logo p {
+                margin-left:25px;
+                margin-top:-10px;
+                font-size:11px;
+            }
+
+            .title {
+                display:inline-block;
+                text-transform: uppercase;
+                text-align:center;
+                font-weight:700;
+                font-size:23px;
+                margin-top:100px;
+            }
+
+            .header > span {
+                position: absolute;
+                top: 126px;
+                right: 20%;
+            }
+
+            .body {
+                display:flex;
+                flex-direction: column;
+                margin-top:30px;
+                width:90%;
+                border: 1px solid black;
+            }
+
+            .body-header {
+                background:#ddd;
+                text-align:center;
+                font-weight:bold;
+                padding:1px 5px 1px 5px;
+                border-bottom: 2px solid black;
+                font-size:15px;
+            }
+
+            .body-body {
+                padding:5px;
+                display:flex;
+                flex-direction: column;
+            }
+
+            .body-body .line {
+                flex: 1;
+                border-bottom: 1px solid black;
+                margin-left:5px;
+            }
+
+            .body-body .big-box {
+                flex: 1;
+                border: 1px solid black;
+                height:100px;
+                margin-left:10px;
+            }
+
+            .body-body .box {
+                flex: 1;
+                border: 1px solid black;
+                margin-left:10px;
+                height:25px;
+            }
+
+            .body-body > span {
+                flex: 0 0 auto;
+            }
+
+            .body-body > p {
+                margin-left:3px;
+            }
+
+            .row {
+                display:flex;
+                flex-direction: row;
+                margin:5px;
+                justify-content: flex-start;
+            }
+
+            .row span:not(:first-child) {
+                margin-left:5px;
+            }
+
+            .fixed {
+                width:108px;
+                text-align:right;
+            }
+
+            .note {
+                text-align:center;
+            }
+
+            .note > i {
+                font-size:12px; 
+            }
+
+            .footer {
+                font-family: 'Times New Roman', Times, serif;
+                position: absolute;
+                bottom:40px;
+                left:20px;
+            }
+
+            @media print {
+                .body-header {
+                    background: #ccc !important;
+                    -webkit-print-color-adjust: exact;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <section class='header'>
+                <div class='logo'>
+                    <img src='https://qaswol.com/SKYW/ACMaintLog/Images/skywestlogo.png' width='280px' height='100px' />
+                    <p>444 South River Road St. George, Utah 84790</p>
+                </div>
+                <div class='title'>
+                    Remove Part Tag
+                </div>
+                <span>M-19A:</span>
+            </section>
+            <section class='body'>
+                <div class='body-header'>
+                    Removed Part
+                </div>
+                <div class='body-body'>
+                    <div class='row'>
+                        <span>Part Description:</span>
+                        <div class='line'></div>
+                    </div>
+                    <div class='row'>
+                        <span>Vendor Part Number:</span>
+                        <div class='line'></div>
+                        <span>Stock Number:</span>
+                        <div class='line'></div>
+                    </div>
+                    <div class='row'>
+                        <span>Serial No:</span>
+                        <div class='line' style='flex:2'></div>
+                        <span>A/C Tail:</span>
+                        <div class='line'></div>
+                        <span>Position:</span>
+                        <div class='line' style='flex:2'></div>
+                    </div>
+                    <div class='row'>
+                        <span>TAT:</span>
+                        <div class='line'></div>
+                        <span>TAC:</span>
+                        <div class='line'></div>
+                        <span>Station:</span>
+                        <div class='line'></div>
+                        <span>Removed Date:</span>
+                        <div class='line' style='flex:2'></div>
+                    </div>
+                    <div class='row'>
+                        <span>TSN:</span>
+                        <div class='line'></div>
+                        <span>CSN:</span>
+                        <div class='line'></div>
+                        <span>TSO:</span>
+                        <div class='line'></div>
+                        <span>CSO:</span>
+                        <div class='line'></div>
+                        <span style='visibility:hidden;'>CSO:</span>
+                        <div class='line' style='visibility:hidden;'></div>
+                    </div>
+                    <div class='row'>
+                        <span>Mechanic:</span>
+                        <div class='line'></div>
+                    </div>
+                    <div class='row'>
+                        <span class='fixed'>Removal Reason:</span>
+                        <div class='big-box'></div>
+                    </div>
+                    <div class='row'>
+                        <span class='fixed' style='margin-top:4px;'>MDC/CMC Codes:</span>
+                        <div class='box'></div>
+                    </div>
+                    <div class='row'>
+                        <span class='fixed'>Comments:</span>
+                        <div class='big-box'></div>
+                    </div>
+                    <p>
+                        NOTE: If removed part is being returned to stock as Serviceable or was robbed for use on another aircraft, the following applies:
+                    </p>
+                    <ul>
+                        <li>The part is to be given a detailed visual inspection by an inspector for obvious damage or defects.</li>
+                        <li>If the part is a tracked part with a time constraint, verify in SkyTrack that the part has adequate time remaining to warrant returning to stock or installing on another aircraft.</li>
+                        <li>An inspector will generate a new M-19 or new barcode, as applicable, and attach to serviceable part.</li>
+                        <li>Refer to GMM 4-11 for detailed procedures.</li>
+                    </ul>
+                </div>
+            </section>
+            <div class='note'>
+                <i>Signatures for Parts Tag (M-19A) are stored in SkyTrack.</i>
+            </div>
+            <section class='footer'>
+                Form M-019A &nbsp;&nbsp;&nbsp; 11/01/2016
+            </section>
+        </div>
+    </body>
+</html>
+
+
